@@ -1,11 +1,19 @@
 package io.github.cursodsousa.produtosapi.model;
 
+import jakarta.persistence.*;
 
+@Entity(name = "produto")
+@Table(name = "produto")
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+
     private String nome;
+
     private String descricao;
+
     private Double preco;
 
     public String getId() {
