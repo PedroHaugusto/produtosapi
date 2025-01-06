@@ -2,13 +2,15 @@ package io.github.cursodsousa.produtosapi.model;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Entity(name = "produto")
 @Table(name = "produto")
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     private String nome;
 
@@ -16,11 +18,11 @@ public class Produto {
 
     private Double preco;
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
